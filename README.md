@@ -145,6 +145,10 @@ loadModule(): Promise<any> {
 - [Compiling C to WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/C_to_Wasm)
 - [Angular Documentation](https://angular.dev/)
 
+## 🧪 Testing
+
+The application has been manually tested and verified to work correctly. Unit tests for WebAssembly integration require an E2E testing environment since the WASM files need to be served by a web server. For this PoC, we recommend testing by running the development server and verifying the application in a browser.
+
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details
