@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Angular 20 + WebAssembly Demo</h1>
+  
+  @if (isLoading()) {
+    <div class="loading">
+      <p>Loading WebAssembly module...</p>
+    </div>
+  }
+  
+  @if (error()) {
+    <div class="error">
+      <p>{{ error() }}</p>
+    </div>
+  }
+  
+  @if (!isLoading() && !error()) {
+    <div class="results">
+      <h2>WebAssembly Functions Called Successfully!</h2>
+      
+      <div class="result-card">
+        <h3>getGreeting()</h3>
+        <p class="result">{{ greeting() }}</p>
+      </div>
+      
+      <div class="result-card">
+        <h3>add(5, 7)</h3>
+        <p class="result">Result: {{ addResult() }}</p>
+      </div>
+      
+      <div class="result-card">
+        <h3>printHello()</h3>
+        <p class="result">Check the browser console for output</p>
+      </div>
+    </div>
+  }
+</div>
