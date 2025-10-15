@@ -22,16 +22,16 @@ export class App {
     try {
       const module = await this.wasmLoader.loadModule();
       this.isLoading.set(false);
-      
+
       // Call the getGreeting function
       const greetingPtr = module.ccall('getGreeting', 'number', [], []);
       const greeting = module.UTF8ToString(greetingPtr);
       this.greeting.set(greeting);
-      
+
       // Call the add function
       const sum = module.ccall('add', 'number', ['number', 'number'], [5, 7]);
       this.addResult.set(sum);
-      
+
       // Call printHello (outputs to console)
       module.ccall('printHello', null, [], []);
     } catch (err) {
